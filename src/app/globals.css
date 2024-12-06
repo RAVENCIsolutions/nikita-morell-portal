@@ -1,21 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.notion {
+    font-size: 15px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.notion-app {
+    @apply bg-neutral-900;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.notion-page,
+.notion-table-view {
+    padding: 0 20px !important;
+    margin: 10px auto !important;
+    
+    width: 100%;
+}
+
+.notion-page-icon-hero .notion-page-icon {
+    font-size: 60px !important;
+    opacity: 0.75 !important;
+}
+
+.notion-page-icon-hero {
+    position: relative;
+    
+    margin-bottom: 10px;
+    
+    left: 0;
+    transform: translateX(50%);
+}
+
+.notion-title {
+    margin-bottom: 0 !important;
+    
+    font-size: 2.25em;
+    font-weight: 700;
+}
+
+.notion-h {
+    margin: 0;
+    width: 100%;
+}
+
+.notion-page-link {
+    margin: 0;
+    padding: 0 0 4px 2px;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.notion-page-link:hover {
+    @apply bg-neutral-700/50;
+}
+
+.notion-table {
+    width: 100% !important;
+}
+
+.notion-table-view * {
+    @apply border-neutral-700;
+}
+
+.notion-table-view {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.notion-table-header {
+    width: 100%;
+}
+
+.notion-table-th:last-of-type .notion-table-view-header-cell-inner,
+.notion-table-cell:last-of-type {
+    flex-grow: 2;
 }
