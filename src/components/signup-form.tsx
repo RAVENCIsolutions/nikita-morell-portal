@@ -59,18 +59,25 @@ export default function SignupForm({ onSignupSuccess }: SignupFormProps) {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="pt-8 pb-4 px-8 bg-white max-w-md w-full shadow-lg shadow-neutral-500/10">
-        <h2 className="font-serif text-center text-3xl font-extrabold text-gray-900">
-          Let's Get You Signed Up!
+      <div className="pt-8 pb-4 px-6 max-w-md w-full bg-white shadow-lg shadow-neutral-500/10">
+        <div className={`mb-6 pb-4 grid place-content-center w-full border-b`}>
+          <img
+            src={`/nikita-morell-full-logo.png`}
+            alt="Nikita Morell"
+            className={`h-16`}
+          />
+        </div>
+        <h2 className="mb-1 w-full font-serif text-center text-3xl font-extrabold text-gray-900">
+          Let's Get You Access to the Architecture Website Library
         </h2>
         <h3 className={`text-center text-lg`}>
-          We will email you your credentials.
+          Your login details will be sent straight to your inbox.
         </h3>
         <form className={`mt-8 space-y-6`} onSubmit={handleSubmit}>
           <div className={`space-y-4`}>
             <div>
               <label htmlFor="email" className="sr-only">
-                Full Name
+                First Name
               </label>
               <input
                 id="name"
@@ -103,7 +110,7 @@ export default function SignupForm({ onSignupSuccess }: SignupFormProps) {
           <button
             type="submit"
             disabled={loading || name.length === 0 || email.length === 0}
-            className="group relative w-full flex justify-center py-2 px-4 bg-neutral-900 hover:bg-white border border-transparent hover:border-neutral-900 focus:outline-none font-medium text-white hover:text-neutral-900 transition-all duration-300 ease-in-out"
+            className="group relative w-full flex justify-center py-2 px-4 bg-neutral-900 hover:bg-white disabled:bg-neutral-400 border border-transparent hover:border-neutral-900 disabled:border-transparent focus:outline-none font-medium text-white hover:text-neutral-900 disabled:text-neutral-600/70 transition-all duration-300 ease-in-out"
           >
             {loading ? "Signing up..." : "Sign Up"}
           </button>
